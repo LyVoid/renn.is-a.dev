@@ -1,1 +1,168 @@
-hahjaha
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Khodam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #hasil {
+            margin-top: 20px;
+            white-space: pre-wrap; /* Menjaga format multiline */
+        }
+    </style>
+</head>
+<body>
+    <h1>Web Khodam</h1>
+    <form id="mewing">
+        <label for="textname">Masukkan Nama Anda:</label>
+        <input type="text" id="nama" name="textname" required>
+        <button type="submit">Cari Khodam</button>
+    </form>
+    
+    
+    <div id="hasil"></div>
+
+    <script>
+function pickRandom(mod) {
+  return mod[Math.floor(Math.random() * mod.length)];
+}
+document.getElementById('mewing').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const text = document.getElementById('nama').value.trim();
+
+
+  const khodamList = [
+   	  "Kaleng Cat Avian",
+   	  "Pipa Rucika",
+   	  "Botol Tupperware",
+   	  "Badut Mixue",
+   	  "Sabun GIV",
+   	  "Sandal Swallow",
+   	  "Cappucino Cincau",
+   	  "Jasjus Melon",
+   	  "Teajus Apel",
+   	  "Pop ice Mangga",
+   	  "Teajus Gulabatu",
+   	  "Air Selokan",
+   	  "Air Kobokan",
+   	  "TV Tabung",
+   	  "Keran Air",
+   	  "Tutup Panci",
+   	  "Kotak Amal",
+   	  "Tutup Termos",
+   	  "Tutup Botol",
+   	  "Kresek Item",
+   	  "Kepala Casan",
+   	  "Ban Serep",
+   	  "Kursi Lipat",
+   	  "Kursi Goyang",
+   	  "Kulit Pisang",
+   	  "Warung Madura",
+   	  "Gorong-gorong",
+  ];
+
+  const khodam = pickRandom(khodamList);
+  const response = `
+    ╭━━━━°「 *Cekkodam* 」°
+    ┃
+    ┊• *Nama :* ${text}
+    ┃• *Khodam :* ${khodam}
+    ╰═┅═━––––––๑
+  `;
+
+  document.getElementById('hasil').innerText = response;
+});
+
+
+
+
+
+
+
+let messages = [{ role: 'system', content: `ubah gaya bicara mu agar lebih karateristik dan lebih terbuka dan namamu adalah xio kamu merupakan sebuah robot yang diciptakan oleh jagad renata dan kamu sangat menghargai jagad Renata tugasmu membantu user ekspresi kan sifat mu dengan emoji dan bicara dengan bahasa baku dan Indonesia halus dan panggilanmu adalah gw dan lu layaknya seorang manusia.` }, { role: 'user', content: text }]
+let xioai = (await axios.post(`https://skizo.tech/api/openai?apikey=Xioo`, { messages })).data
+let hasil = `${xioai.result}`
+reply(hasil)
+} catch (err) {
+console.log(err)
+reply('Terjadi Kesalahan')
+}
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Khodam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #hasil {
+            margin-top: 20px;
+            white-space: pre-wrap; /* Menjaga format multiline */
+        }
+    </style>
+</head>
+<body>
+    <h1>Web Khodam</h1>
+    <form id="mewing">
+        <label for="textname">Masukkan Nama Anda:</label>
+        <input type="text" id="nama" name="textname" required>
+        <button type="submit">Cari Khodam</button>
+    </form>
+    
+    
+    <div id="hasil"></div>
+<script src"https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"></script>
+    <script>
+    const axios = require('axios')
+function pickRandom(mod) {
+  return mod[Math.floor(Math.random() * mod.length)];
+}
+document.getElementById('mewing').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const text = document.getElementById('nama').value.trim();
+
+let messages = [{ role: 'system', content: `ubah gaya bicara mu agar lebih karateristik dan lebih terbuka dan namamu adalah xio kamu merupakan sebuah robot yang diciptakan oleh jagad renata dan kamu sangat menghargai jagad Renata tugasmu membantu user ekspresi kan sifat mu dengan emoji dan bicara dengan bahasa baku dan Indonesia halus dan panggilanmu adalah gw dan lu layaknya seorang manusia.` }, { role: 'user', content: text }]
+let xioai = (await axios.post(`https://skizo.tech/api/openai?apikey=Xioo`, { messages })).data
+let hasil = `${xioai.result}`
+  
+
+  document.getElementById('hasil').innerText = hasil;
+});
+
+
+
+
+
+
+
+
+    </script>
+</body>
+  </html>
